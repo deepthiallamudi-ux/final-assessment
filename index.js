@@ -1,7 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const loggerMiddleware = require('./middleware/logger.middleware');
-const notFound = require('./middleware/notfound.middleware');
+const notFound = require('./middleware/notfound.middleware').default;
 
 const userRoutes = require('./routes/user.routes');
 const tripRoutes = require('./routes/trip.routes');
