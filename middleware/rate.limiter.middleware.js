@@ -1,5 +1,6 @@
-const store={}; 
-const rateLimiter=(req,res,next)=>{
+const store = {}; 
+
+const rateLimiter = (req, res, next) => {
     const ip=req.ip||req.connection.remoteAddress||"unknown";
 const now=Date.now();
 if(!store[ip]){
@@ -24,4 +25,4 @@ if(store[ip].count>5){
 return next();
 };
 
-export default(rateLimiter);
+module.exports = rateLimiter;
